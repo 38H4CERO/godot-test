@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b17hcs85cxdfv"]
+
+[ext_resource type="Texture2D" uid="uid://doynx2o0mx4j7" path="res://assets/sprites/Terrain/TileSet.png" id="1_nd84p"]
+[ext_resource type="PackedScene" uid="uid://b3mlwnt7so7f" path="res://nodes/Player/player.tscn" id="2_r078c"]
+[ext_resource type="PackedScene" uid="uid://dojv0jdegvgs4" path="res://nodes/Gui/cross_hair.tscn" id="3_atuhg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vmon"]
+texture = ExtResource("1_nd84p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_dwkud"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7vmon")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(2, 0)
+tile_set = SubResource("TileSet_dwkud")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_r078c")]
+position = Vector2(319, 179)
+
+[node name="CrossHair" parent="." instance=ExtResource("3_atuhg")]
