@@ -654,10 +654,11 @@ position = Vector2(319, 292)
 [node name="CrossHair" parent="." instance=ExtResource("3_atuhg")]
 
 [node name="FPS" type="Label" parent="."]
-offset_left = 6.0
-offset_top = 360.0
-offset_right = 46.0
-offset_bottom = 383.0
+z_index = 1
+offset_left = 11.0
+offset_top = 371.0
+offset_right = 51.0
+offset_bottom = 394.0
 script = ExtResource("4_qnpfa")
 
 [node name="TileMap" type="TileMap" parent="."]

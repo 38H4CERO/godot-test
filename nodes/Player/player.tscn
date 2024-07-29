@@ -195,7 +195,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -212,7 +212,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -229,11 +229,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoted",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqeo4"]
-size = Vector2(32, 32)
+size = Vector2(24, 32)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_asbjk")
@@ -242,12 +242,13 @@ script = ExtResource("1_asbjk")
 position = Vector2(20, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_t1gcp")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.349263
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_eqeo4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
