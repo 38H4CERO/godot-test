@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://xbn5m64g6c4c"]
+
+[ext_resource type="Script" path="res://scripts/Menu/MainMenu.gd" id="1_oiy2a"]
+[ext_resource type="FontFile" uid="uid://ci1xfx6jpv6jd" path="res://assets/fonts/unibody8/Unibody8Pro-Bold.otf" id="1_x68me"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oiy2a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -131.0
+offset_right = 107.0
+offset_bottom = -15.0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_x68me")
+text = "Start"
+
+[node name="ConfigButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_x68me")
+text = "Config"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_x68me")
+text = "Exit"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "Exit?"
+position = Vector2i(130, 130)
+size = Vector2i(366, 121)
+always_on_top = true
+ok_button_text = "Yes"
+dialog_text = "Are you sure you want to quit?"
+cancel_button_text = "NO!"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

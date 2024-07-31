@@ -42,6 +42,10 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/goutte.animated_shape_2d/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://assets/fonts/unibody8/Unibody8Pro-Regular.otf"
+
 [input]
 
 left={

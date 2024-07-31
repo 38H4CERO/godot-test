@@ -58,7 +58,6 @@ func get_line_untill_caret(line:String) -> String:
 #   content of the current line, the last word and the symbol that came before
 # Triggers opening of the popup
 func request_code_completion(force:bool, text:CodeEdit, mode:=Modes.FULL_HIGHLIGHTING) -> void:
-	## TODO remove this once https://github.com/godotengine/godot/issues/38560 is fixed
 	if mode != Modes.FULL_HIGHLIGHTING:
 		return
 

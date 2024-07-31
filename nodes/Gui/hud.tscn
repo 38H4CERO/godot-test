@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cavmodt6f4oxk"]
+
+[ext_resource type="FontFile" uid="uid://xthrojbp8bam" path="res://assets/fonts/unibody8/Unibody8Pro-Regular.otf" id="1_os8qu"]
+[ext_resource type="Script" path="res://scripts/Gui/FPS.gd" id="1_tpybx"]
+[ext_resource type="PackedScene" uid="uid://dojv0jdegvgs4" path="res://nodes/Gui/cross_hair.tscn" id="3_7rdmc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ppgsb"]
+font = ExtResource("1_os8qu")
+font_size = 8
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 15.0
+text = "FPS"
+label_settings = SubResource("LabelSettings_ppgsb")
+script = ExtResource("1_tpybx")
+
+[node name="CrossHair" parent="." instance=ExtResource("3_7rdmc")]

@@ -303,7 +303,6 @@ func preview_shape_frame():
 			preview_background.offset_right -= s.x * 0.5
 			preview_background.offset_top -= s.y * 0.5
 			preview_background.offset_bottom -= s.y * 0.5
-		# TODO: handle sprite offset too, probably
 	preview_background.color = self.background_color
 	
 	if preview_background.get_parent() != sprite_preview:

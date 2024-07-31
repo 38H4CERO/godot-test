@@ -4,8 +4,8 @@ extends Node2D
 @onready var sprite = $AnimatedSprite2D
 var recharging : bool = false
 
-var max_ammo : int = 2
-var ammo : int = max_ammo
+@export var max_ammo : int = 2
+@export var ammo : int = max_ammo
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Speed scale debe de subir y wait time bajar

@@ -1,10 +1,17 @@
 extends CharacterBody2D
 
+# TODO: player_sprite: integrar sprite de afk
+class_name Player
+
+@onready var sprite = $AnimatedSprite2D
+@onready var shotgun = $Shotgun
+@onready var recharge_bar = $RechargeSkillCheck
+@onready var shotgun_sprite = shotgun.get_node("AnimatedSprite2D")
 
 const SPEED : float = 300.0
 const JUMP_VELOCITY : float = -400.0
 const FRICTION  : int = 1000
-var shot_knockback_power: int = 400
+@export var shot_knockback_power: int = 400
 
 var shoted : bool = false
 
@@ -12,10 +19,7 @@ var shoted : bool = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var mouser_pos : Vector2
 
-@onready var sprite = $AnimatedSprite2D
-@onready var shotgun = $Shotgun
-@onready var recharge_bar = $RechargeSkillCheck
-@onready var shotgun_sprite = shotgun.get_node("AnimatedSprite2D")
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -88,7 +92,7 @@ func shot_shotgun():
 
 func recharge_shotgun():
 	recharge_bar.recharge()
-	# TODO
+	# TODO: SkillCheck de recarga
 	
 func _input(event):
 	if Input.is_action_just_pressed("primary_action"):

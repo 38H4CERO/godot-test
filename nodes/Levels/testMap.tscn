@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b17hcs85cxdfv"]
+[gd_scene load_steps=5 format=3 uid="uid://b17hcs85cxdfv"]
 
-[ext_resource type="Texture2D" uid="uid://blx3lntii7wmi" path="res://assets/sprites/Terrain/TX Tileset Ground.png" id="2_2j8gw"]
-[ext_resource type="PackedScene" uid="uid://b3mlwnt7so7f" path="res://nodes/Player/player.tscn" id="2_r078c"]
-[ext_resource type="PackedScene" uid="uid://dojv0jdegvgs4" path="res://nodes/Gui/cross_hair.tscn" id="3_atuhg"]
-[ext_resource type="Script" path="res://scripts/Gui/FPS.gd" id="4_qnpfa"]
+[ext_resource type="PackedScene" uid="uid://b3mlwnt7so7f" path="res://nodes/Player/player.tscn" id="1_chf5p"]
+[ext_resource type="Texture2D" uid="uid://blx3lntii7wmi" path="res://assets/sprites/Terrain/TX Tileset Ground.png" id="2_1q7bw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xudyq"]
-texture = ExtResource("2_2j8gw")
+texture = ExtResource("2_1q7bw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -648,18 +646,8 @@ sources/0 = SubResource("TileSetAtlasSource_xudyq")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("2_r078c")]
+[node name="Player" parent="." instance=ExtResource("1_chf5p")]
 position = Vector2(319, 292)
-
-[node name="CrossHair" parent="." instance=ExtResource("3_atuhg")]
-
-[node name="FPS" type="Label" parent="."]
-z_index = 1
-offset_left = 11.0
-offset_top = 371.0
-offset_right = 51.0
-offset_bottom = 394.0
-script = ExtResource("4_qnpfa")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wnn47")
